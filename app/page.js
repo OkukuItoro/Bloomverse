@@ -12,13 +12,14 @@ import {
   WhatsNew,
   World,
 } from "../sections";
+import { BsArrowUpSquare } from "react-icons/bs";
 
 const Page = () => {
   const [liteTheme, setLiteTheme] = useState(true);
 
   return (
     <div className={`${liteTheme ? "light" : "dark"}`}>
-      <div className="bg-primary-light dark:bg-[#1A232E] overflow-hidden">
+      <div className=" relative bg-primary-light dark:bg-[#1A232E] overflow-hidden">
         <Navbar liteTheme={liteTheme} setLiteTheme={setLiteTheme} />
         <Hero />
         <div className="relative">
@@ -38,6 +39,10 @@ const Page = () => {
           <Feedback />
         </div>
         <Footer />
+        <BsArrowUpSquare
+          size={40}
+          className="fixed bottom-5 right-2 mt-[28px] text-[#1A232E] dark:text-white"
+        />
       </div>
     </div>
   );
