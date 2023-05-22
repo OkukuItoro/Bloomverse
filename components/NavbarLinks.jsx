@@ -13,6 +13,7 @@ const NavbarLinks = () => {
         <div key={i} className="p-1">
           <a
             onMouseOver={() => showLinkIcon(i)}
+            onFocus={() => showLinkIcon(i)}
             className="flex flex-row gap-2 items-center hover:font-bold dark:text-white text-[#1A232E]"
             href={linkItem.link}
           >
