@@ -12,7 +12,7 @@ import {
   WhatsNew,
   World,
 } from "../sections";
-import { BsArrowUpSquare } from "react-icons/bs";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 const Page = () => {
   const [liteTheme, setLiteTheme] = useState(true);
@@ -39,10 +39,7 @@ const Page = () => {
           <Feedback />
         </div>
         <Footer />
-        <BsArrowUpSquare
-          size={40}
-          className="fixed bottom-5 right-2 mt-[28px] text-[#1A232E] dark:text-white"
-        />
+        <ScrollToTopButton />
       </div>
     </div>
   );
