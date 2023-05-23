@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { CgMenuRight } from "react-icons/cg";
 import { FiSun, FiSearch } from "react-icons/fi";
@@ -11,6 +11,20 @@ import NavbarLinks from "./NavbarLinks";
 
 const Navbar = ({ liteTheme, setLiteTheme }) => {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClick = () => {
+      setOpen(false);
+    };
+
+    document.addEventListener("click", handleClick);
+    document.addEventListener("scroll", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+      document.removeEventListener("scroll", handleClick);
+    };
+  }, [open]);
 
   return (
     <motion.nav
